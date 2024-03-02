@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Kinda tmdb</title>
+		<link
+			href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div class="grain"></div>
+		<i class="ri-close-fill hidden" id="close"></i>
+		<i class="ri-arrow-left-fill hidden" id="back"></i>
+		<img src="kOnzy.gif" id="loader" class="hidden" />
+		<div class="blur hidden"></div>
+		<div class="overlay hidden"></div>
+		<header>
+			<form id="form">
+				<input
+					type="text"
+					placeholder="Search"
+					id="search"
+					class="search"
+				/>
+			</form>
+		</header>
+		<main id="main"></main>
+		<script src="script.js" type="module"></script>
+	</body>
+</html>

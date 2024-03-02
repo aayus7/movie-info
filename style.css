@@ -1,0 +1,762 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+@font-face {
+	font-family: Magnet-med;
+	src: url(Morganite-Medium.woff2);
+}
+@font-face {
+	font-family: Magnet-bold;
+	src: url(Morganite-Bold.woff2);
+}
+@font-face {
+	font-family: Magnet-light;
+	src: url(Morganite-Light.woff2);
+}
+@font-face {
+	font-family: Magnet-sb;
+	src: url(Morganite-SemiBold.woff2);
+}
+@font-face {
+	font-family: aeonik-bold;
+	src: url(AeonikTRIAL-Bold.woff2);
+}
+@font-face {
+	font-family: aeonik-reg;
+	src: url(AeonikTRIAL-Regular.woff2);
+}
+
+:root {
+	--primary-color: #181028;
+	--secondary-color: #2c2446;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: inter;
+	color: white;
+	user-select: none;
+}
+
+html {
+	width: 100vw;
+	height: 120vh;
+	scroll-behavior: smooth;
+	overflow-x: hidden;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	background-color: #181028;
+}
+
+.grain {
+	display: inline-block;
+	min-height: 100%;
+	width: 100%;
+	background-image: url("https://assets.website-files.com/62e2595f1894d2d0af9b6f0e/62e25b1ae87705f92c844cf6_grain-slow.gif");
+	background-repeat: repeat;
+	opacity: 0.07;
+	background-attachment: fixed;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: -100;
+}
+
+header {
+	padding: 1rem;
+	display: block;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 1.7rem;
+	/* background-color: white; */
+	z-index: 100;
+}
+
+#search {
+	width: 110px;
+	padding: 1rem 1.5rem;
+	font-size: 1.1rem;
+	font-weight: 500;
+	border-radius: 50px;
+	border: none;
+	background-color: var(--secondary-color);
+	cursor: pointer;
+	transition: all 0.3s;
+	margin-top: 10px;
+}
+
+#search:hover {
+	cursor: pointer;
+	/* box-shadow: 0 0px 15px #2c2446; */
+	box-shadow: 0px 0px 17px 10px rgba(75, 7, 7, 0.1);
+}
+
+#search:focus {
+	background-color: #431b78;
+	outline: none;
+	cursor: text;
+	width: 300px;
+	z-index: 100;
+}
+
+#search:active {
+	box-shadow: none;
+}
+
+::placeholder {
+	color: rgba(255, 255, 255, 0.719);
+}
+
+.movie {
+	cursor: pointer;
+	width: 23%;
+	background-color: var(--secondary-color);
+	padding: 1.2rem;
+	padding-bottom: 1rem;
+	border-radius: 20px;
+	position: relative;
+	overflow: hidden;
+}
+
+.movie img {
+	width: 100%;
+	object-fit: cover;
+	border-radius: 12px;
+}
+
+main {
+	margin: auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 1.2rem;
+	max-width: 1540px;
+}
+
+.movie-info {
+	color: #ccc;
+	margin-top: 0.9rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+#spanker {
+	background-color: var(--primary-color);
+	border-radius: 50%;
+	padding: 11px;
+	font-weight: 500;
+}
+
+.green {
+	color: rgb(0, 214, 0);
+}
+
+.orange {
+	color: orange;
+}
+
+.red {
+	color: red;
+}
+
+.overview {
+	position: absolute;
+	left: 9px;
+	bottom: 9px;
+	right: 9px;
+	padding: 1.2rem;
+	background-color: rgb(240, 177, 177);
+	color: black;
+	max-height: 100%;
+	font-size: 1.35rem;
+	font-weight: 500;
+	letter-spacing: -0.5px;
+	transform: translateY(120%);
+	transition: all 0.4s;
+	border-radius: 20px;
+}
+
+.movie:hover .overview {
+	transform: translateY(0);
+}
+
+.overlay {
+	border-radius: 30px;
+	min-width: 55%;
+	height: auto;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	/* background-color: #4c319d; */
+	background: linear-gradient(
+		135deg,
+		rgba(40, 27, 105, 0.704),
+		rgba(0, 0, 0, 0.319)
+	);
+	backdrop-filter: blur(80px);
+	-webkit-backdrop-filter: blur(80px);
+	border-radius: 20px;
+	border: 1px solid rgba(255, 255, 255, 0.18);
+	box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+	z-index: 100;
+	padding: 0.5rem 1.5rem;
+}
+
+.info {
+	display: flex;
+	align-items: center;
+	padding: 10px;
+}
+
+.info img {
+	width: 33%;
+	border-radius: 15px;
+}
+
+.ratings img {
+	width: 30px;
+}
+
+#wow {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	gap: 20px;
+	align-items: center;
+}
+
+#wow h2 {
+	text-align: center;
+	font-family: Magnet-bold, inter;
+	font-size: 6rem;
+	letter-spacing: 1.5px;
+	color: white;
+}
+
+.ratings h4 {
+	color: white;
+	font-family: aeonik-bold;
+	letter-spacing: 1px;
+	font-weight: 400;
+	font-size: 1.4rem;
+	margin-left: 15px;
+}
+
+.ratings {
+	display: flex;
+	align-items: center;
+	margin-bottom: 5px;
+}
+
+.details span {
+	font-weight: 400;
+	color: white;
+	font-size: 1.25rem;
+	padding: 0 10px;
+	/* color: #d7d7d7; */
+}
+
+.genre {
+	font-size: 1.2rem;
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+	margin-top: 10px;
+}
+
+.genre div {
+	color: white;
+	font-family: aeonik-reg;
+	border: solid 1.7px rgb(255, 255, 255);
+	padding: 10px 20px;
+	border-radius: 10px;
+}
+
+.infoh3 {
+	color: white;
+	font-family: aeonik-bold;
+	font-weight: 800;
+	margin-top: 20px;
+}
+
+.infop {
+	font-weight: 400;
+	color: white;
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+
+.ok {
+	padding: 0 25px;
+}
+
+.hidden {
+	display: none;
+}
+
+#close {
+	position: fixed;
+	font-size: 2.8rem;
+	top: 30px;
+	right: 50px;
+	color: black;
+	padding: 8px 10px;
+	border-radius: 50%;
+	background-color: white;
+	transition: all 0.2s;
+	z-index: 10000;
+	cursor: pointer;
+}
+
+#back {
+	position: absolute;
+	font-size: 2.8rem;
+	top: 20px;
+	left: 50px;
+	color: black;
+	padding: 8px 10px;
+	border-radius: 50%;
+	background-color: white;
+	transition: all 0.2s;
+	z-index: 10000;
+	cursor: pointer;
+}
+
+#close:hover {
+	scale: 1.2;
+	background-color: black;
+	color: red;
+}
+#back:hover {
+	scale: 1.2;
+	background-color: black;
+	color: red;
+}
+
+#close:active {
+	background-color: red;
+	color: black;
+	transition: none;
+}
+#back:active {
+	background-color: red;
+	color: black;
+	transition: none;
+}
+
+.blur {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	backdrop-filter: blur(4px);
+	z-index: 100;
+	transition: all 0.5s;
+}
+
+#loader {
+	width: 50px;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 9999;
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+	.movie {
+		min-width: 26%;
+		padding: 12px 12px;
+	}
+
+	.overview {
+		font-size: 1.2rem;
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+	.overview {
+		font-size: 1rem;
+	}
+
+	.movie {
+		min-width: 31%;
+		padding: 12px 12px;
+	}
+
+	main {
+		gap: 0.8rem;
+	}
+
+	#wow h2 {
+		font-size: 5rem;
+	}
+	.ratings h4 {
+		font-size: 1.3rem;
+	}
+	.ratings img {
+		width: 25px;
+	}
+
+	.details span {
+		font-size: 1rem;
+	}
+	.genre {
+		font-size: 1rem;
+	}
+
+	.genre div {
+		padding: 10px 15px;
+	}
+
+	.infoh3 {
+		font-size: 1.1rem;
+	}
+
+	.infop {
+		font-size: 0.9rem;
+	}
+
+	#close {
+		font-size: 2.1rem;
+	}
+
+	#back {
+		font-size: 2.1rem;
+	}
+
+	.overlay {
+		min-width: 75%;
+	}
+}
+
+@media screen and (min-width: 600px) and (max-width: 768px) {
+	main {
+		gap: 0.8rem;
+	}
+
+	.overview {
+		font-size: 1.2rem;
+	}
+
+	.movie {
+		min-width: 47%;
+		padding: 12px 12px;
+	}
+
+	#wow h2 {
+		font-size: 5rem;
+	}
+	.ratings h4 {
+		font-size: 1.3rem;
+	}
+	.ratings img {
+		width: 25px;
+	}
+
+	.details span {
+		font-size: 1rem;
+	}
+	.genre {
+		font-size: 1rem;
+	}
+
+	.genre div {
+		padding: 10px 15px;
+	}
+
+	.infoh3 {
+		font-size: 1.1rem;
+	}
+
+	.infop {
+		font-size: 0.9rem;
+	}
+
+	#close {
+		font-size: 2.1rem;
+	}
+
+	#back {
+		font-size: 2.1rem;
+	}
+
+	.overlay {
+		min-width: 90%;
+	}
+}
+
+@media screen and (min-width: 425px) and (max-width: 600px) {
+	main {
+		gap: 0.8rem;
+	}
+	.overview {
+		font-size: 1rem;
+	}
+	.movie {
+		min-width: 47%;
+		padding: 10px 10px;
+	}
+
+	#wow h2 {
+		font-size: 4rem;
+	}
+	.ratings h4 {
+		font-size: 1em;
+	}
+	.ratings img {
+		width: 20px;
+	}
+
+	.details span {
+		font-size: 0.9rem;
+	}
+	.genre {
+		font-size: 0.9rem;
+	}
+
+	.genre div {
+		padding: 10px 10px;
+	}
+
+	.infoh3 {
+		font-size: 1.1rem;
+	}
+
+	.infop {
+		font-size: 0.9rem;
+	}
+
+	#close {
+		font-size: 1.5rem;
+	}
+
+	#back {
+		font-size: 1.5rem;
+	}
+
+	.overlay {
+		min-width: 90%;
+		padding: 5px 2px;
+	}
+
+	#infoimg {
+		min-width: 165px;
+	}
+}
+
+@media screen and (min-width: 375px) and (max-width: 425px) {
+	main {
+		gap: 0.5rem;
+	}
+
+	.overview {
+		font-size: 0.9rem;
+	}
+
+	.movie {
+		min-width: 47%;
+		padding: 10px 10px;
+	}
+
+	#wow h2 {
+		font-size: 3rem;
+	}
+	.ratings h4 {
+		font-size: 0.8em;
+	}
+	.ratings img {
+		width: 17px;
+	}
+
+	.details span {
+		font-size: 0.7rem;
+	}
+	.genre {
+		font-size: 0.7rem;
+	}
+
+	.genre div {
+		padding: 8px 7px;
+	}
+
+	.infoh3 {
+		font-size: 1.1rem;
+	}
+
+	.infop {
+		font-size: 0.9rem;
+	}
+
+	#close {
+		font-size: 1.5rem;
+	}
+
+	#back {
+		font-size: 1.5rem;
+	}
+
+	.overlay {
+		min-width: 90%;
+		padding: 1px 1px;
+	}
+
+	#infoimg {
+		min-width: 150px;
+	}
+
+	.details span {
+		padding: 0 5px;
+	}
+}
+
+@media screen and (min-width: 320px) and (max-width: 375px) {
+	main {
+		gap: 0.5rem;
+	}
+
+	.overview {
+		font-size: 0.8rem;
+		padding: 2px 7px;
+	}
+
+	.movie {
+		min-width: 47%;
+		padding: 10px 10px;
+	}
+
+	#wow h2 {
+		font-size: 3rem;
+	}
+	.ratings h4 {
+		font-size: 0.8em;
+	}
+	.ratings img {
+		width: 17px;
+	}
+
+	.details span {
+		font-size: 0.7rem;
+	}
+	.genre {
+		font-size: 0.7rem;
+	}
+
+	.info {
+		padding-top: 6px;
+		padding-left: 5px;
+		padding-right: 5px;
+		padding-bottom: 0;
+	}
+
+	.genre div {
+		padding: 8px 7px;
+	}
+
+	.infoh3 {
+		font-size: 1rem;
+	}
+
+	.infop {
+		font-size: 0.7rem;
+	}
+
+	#close {
+		font-size: 1.5rem;
+	}
+
+	#back {
+		font-size: 1.5rem;
+	}
+
+	.overlay {
+		min-width: 90%;
+		padding: 0px 0px;
+	}
+
+	#infoimg {
+		min-width: 132px;
+	}
+
+	.details span {
+		padding: 0 5px;
+	}
+}
+
+@media screen and (min-width: 200px) and (max-width: 320px) {
+	main {
+		gap: 0.5rem;
+	}
+
+	.overview {
+		font-size: 0.9rem;
+		padding: 3px 3px;
+	}
+
+	.movie {
+		min-width: 47%;
+		padding: 10px 10px;
+	}
+
+	#wow h2 {
+		font-size: 2.9rem;
+	}
+	.ratings h4 {
+		font-size: 0.8em;
+	}
+	.ratings img {
+		width: 17px;
+	}
+
+	.details span {
+		font-size: 0.7rem;
+	}
+	.genre {
+		font-size: 0.7rem;
+	}
+
+	.info {
+		padding: none;
+	}
+
+	.genre div {
+		padding: 5px 2px;
+	}
+
+	.infoh3 {
+		font-size: 1rem;
+	}
+
+	.infop {
+		font-size: 0.7rem;
+	}
+
+	#close {
+		font-size: 1.5rem;
+	}
+
+	#back {
+		font-size: 1.5rem;
+	}
+
+	.overlay {
+		min-width: 90%;
+		padding: 0px 0px;
+	}
+
+	#infoimg {
+		min-width: 125px;
+	}
+
+	.details span {
+		padding: 0 2px;
+	}
+}
